@@ -40,7 +40,7 @@ if has("unix")
 endif
 
 if has('nvim')
-    let s:editor_root=expand("~/.config/nvim")
+    let s:editor_root=expand("~/dotfiles/nvim")
 else
     let s:editor_root=expand("~/.vim")
 endif
@@ -51,10 +51,12 @@ function! SymlinkSnippets(info)
         silent execute "!ln -s " . s:editor_root . "/plugged/ultisnips/ftdetect " . s:editor_root . "/"
     endif
 endfunction
-
 function! SetColorscheme(...)
     try
-        colorscheme Tomorrow-Night-Eighties
+        colorscheme default
+        set background=dark
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+        colorscheme solarized
     catch /^Vim\%((\a\+)\)\=:E185/
         autocmd VimEnter * echom "Color scheme not found. Maybe it's installing?"
     endtry
@@ -73,7 +75,8 @@ if empty(glob(s:editor_root . '/autoload/plug.vim'))
 endif
 call plug#begin(s:editor_root . '/plugged')
 
-Plug 'tmux-plugins/vim-tmux'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tpope/vim-repeat'
 Plug 'szw/vim-ctrlspace'
 Plug 'myusuf3/numbers.vim'

@@ -20,14 +20,12 @@ function box_name {
     [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
 }
 
-PROMPT='
-%{$fg[cyan]%}%n%{$reset_color%} @ %{$fg_bold[yellow]%}$(box_name)%{$reset_color%} em %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
-$(virtualenv_info)$(prompt_char) '
-#if [[ -n $SSH_CONNECTION ]]; then
-#  PROMPT='%m:%3~$(git_prompt_info)%# '
-#else
-#   PROMPT='%3~$(git_prompt_info)%# '
-#fi
+#PROMPT='%{$fg[cyan]%}%n%{$reset_color%} @ %{$fg_bold[yellow]%}$(box_name)%{$reset_color%} em %{$fg_bold[green]%}${PWD/#$HOME/~}%$reset_color%}$(hg_prompt_info)$(git_prompt_info)$(virtualenv_info)$(prompt_char) '
+if [[ -n $SSH_CONNECTION ]]; then
+  PROMPT='%m:%3~$(git_prompt_info)%# '
+else
+   PROMPT='%3~$(git_prompt_info)%# '
+fi
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
