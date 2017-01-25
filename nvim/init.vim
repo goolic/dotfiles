@@ -112,6 +112,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim/', 'do': function('SetColorscheme') }
 Plug 'ap/vim-css-color'
 Plug 'Valloric/YouCompleteMe'
+Plug 'vim-pandoc/vim-pandoc'
 
 if has('nvim')
     Plug 'kassio/neoterm'
