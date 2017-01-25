@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/admin/dotfiles/nvim/plugged/YCM-Generator'
 let g:netrw_dirhist_2='/Users/admin/dotfiles/nvim/plugged/YCM-Generator/plugin'
+let g:netrw_dirhist_3='/Users/admin/.dotfiles/config'
+let g:netrw_dirhist_4='/Users/admin/dev/neovim'
+let g:netrw_dirhist_5='/Users/admin/dev/neovim/build'
+let g:netrw_dirhist_6='/Users/admin/dev/magenta'

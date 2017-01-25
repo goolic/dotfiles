@@ -16,6 +16,7 @@ set hidden
 set hlsearch
 set backspace=2
 let mapleader=","
+
 autocmd Filetype html setlocal ts=4 sts=4 sw=4 omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4
@@ -40,7 +41,7 @@ if has("unix")
 endif
 
 if has('nvim')
-    let s:editor_root=expand("~/dotfiles/nvim")
+    let s:editor_root=expand("~/.dotfiles/nvim")
 else
     let s:editor_root=expand("~/.vim")
 endif
@@ -78,7 +79,7 @@ call plug#begin(s:editor_root . '/plugged')
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'tpope/vim-repeat'
-Plug 'szw/vim-ctrlspace'
+" Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/syntastic'
 Plug 'mileszs/ack.vim'

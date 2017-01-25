@@ -1,0 +1,9 @@
+package brew
+package fasd
+package osx
+package pbcopy
+package python
+package thefuck
+package vi-mode
+theme agnoster
+theme default
